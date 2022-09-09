@@ -11,8 +11,6 @@ class Perceptron:
         """Initialize the perceptron with given weights (default is None)"""
         self.weights = weights
 
-    # Problem 1
-
     def predict1(self, x):
         """
         Predict a single input/output from the perceptron model.
@@ -28,8 +26,6 @@ class Perceptron:
                 activation+=self.weights[i+1]*x[i]
             return 1 if activation > 0 else 0 
 
-    # Problem 2
-
     def predict(self, X):
         """
         Predict a list of input/outputs from the perceptron model.
@@ -41,8 +37,6 @@ class Perceptron:
             t=self.predict1(i)
             res.append(t)
         return res    
-
-    # Problem 3
 
     def update(self, x, y):
         """
@@ -64,8 +58,6 @@ class Perceptron:
                 self.weights[i]= self.weights[i]+(error*res[i])
                 #self.weights[i]=weights[i]
         return self.weights    
-            
-    # Problem 4
 
     def fit(self, X, Y, num_iter=100):
         """
@@ -79,8 +71,6 @@ class Perceptron:
             for x, y in zip(X, Y):
                 Con=self.update(x,y)
         return Con    
-    
-    # Problem 5
 
     def score(self, X, Y):
         """
